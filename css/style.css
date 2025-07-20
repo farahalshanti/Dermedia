@@ -30,7 +30,7 @@ ul {
 }
 a,
 i,
-button{
+button {
   cursor: pointer;
 }
 body button:hover {
@@ -38,7 +38,12 @@ body button:hover {
   color: var(--font-color);
   border: 1px solid var(--font-color);
 }
-body header div i{
+header button:hover,.hero button:hover{
+  background-color: var(--background);
+  color: var(--font-color);
+  border: 1px solid var(--font-color);
+}
+body header div i {
   font-size: 1.5rem;
 }
 a {
@@ -62,7 +67,8 @@ h2 {
   text-align: right;
   max-width: 100%;
 }
-h3,.services i {
+h3,
+.services i {
   color: var(--main-color);
   font-size: 2rem;
 }
@@ -116,7 +122,7 @@ footer {
   align-items: center;
   justify-content: flex-end;
   padding: 40px 0;
-  gap: 34px;
+  gap: 20px;
 }
 .services .offer p,
 .whyUs p,
@@ -126,7 +132,10 @@ footer p {
   font-size: 1rem;
   width: 35%;
   line-height: 1.5rem;
-}.services .offer p,.whyUs .team p,.contact .contant-intro p{
+}
+.services .offer p,
+.whyUs .team p,
+.contact .contant-intro p {
   transform: translateX(455px);
 }
 header .nav-links,
@@ -142,7 +151,7 @@ footer .sub-menu li {
 header .sub-menu li a,
 footer .sub-menu li a {
   font-size: 10px;
-  margin: 5px;
+  margin: 0 5px;
 }
 header .sub-menu,
 footer .sub-menu {
@@ -168,12 +177,9 @@ header .logo {
 header button {
   margin-right: 20px;
   padding: 5px 20px;
+  border: 1px solid var(--font-color);
   color: var(--font-color);
   background-color: transparent;
-  border: 1px solid var(--font-color);
-}
-header a.active {
-  border-bottom: 1px solid var(--font-color);
 }
 .menu-toggle {
   display: none;
@@ -182,16 +188,45 @@ header i {
   transition: transform 0.3s ease, color 0.3s ease;
   margin-right: 10px;
 }
-header i:hover {
-  transform: scale(1.3);
+header .nav-links a,
+header .sub-menu a {
+  padding: 4px 10px;
+}
+header .nav-links a:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+i.fa-angle-up {
+  transform: rotate(360deg);
+  transition: transform 1s;
 }
 .color-picker-wrapper {
   position: relative;
   display: inline-block;
 }
+header .color-picker-wrapper:hover {
+  animation: color-change 1s infinite ease-in-out;
+}
+@keyframes color-change {
+  0%,
+  25% {
+    color: #884178;
+  }
+  25%,
+  50% {
+    color: #5d6730;
+  }
+  50%,
+  75% {
+    color: #2b2f5d;
+  }
+  75%,
+  100% {
+    color: #254a36;
+  }
+}
 .color-picker {
   position: absolute;
-  top: 100%;
+  top: 110%;
   left: 35%;
   transform: translateX(-50%);
   background: var(--font-color);
@@ -227,7 +262,7 @@ header i:hover {
   padding: 10px 40px;
   font-size: 1rem;
   background-color: var(--font-color);
-  color: var(--background);
+  color: var(--main-color);
 }
 /* Services Section */
 .services .content-section > div:nth-child(1) {
@@ -294,6 +329,7 @@ header i:hover {
   overflow: hidden;
   background-color: var(--font-color);
   color: var(--background);
+  border-radius: 50px;
 }
 .projects .slide-container {
   display: flex;
@@ -311,11 +347,12 @@ header i:hover {
   transform: translateY(-50%);
   padding: 5px;
   z-index: 100;
+  border-radius: 50%;
+  transition: 1s;
 }
-.projects i.fa-solid:hover{
+.projects i.fa-solid:hover {
   background-color: var(--background);
   color: var(--font-color);
-  border-radius: 50%;
 }
 .projects i.fa-angle-left {
   left: 10px;
@@ -476,197 +513,4 @@ footer .content-section div:nth-last-child(1) {
   margin-left: 15px;
   color: var(--font-color);
   text-decoration: none;
-}
-/* ==== Responsive Design ==== */
-@media (max-width: 1066px) {
-  h2 {
-    font-size: 4rem;
-  }
-  .container {
-    width: 80%;
-    padding: 22px 0;
-  }
-  header button {
-    display: none;
-  }
-  .services .content-section > div:nth-child(1),
-  .about .content-section,
-  footer .content-section {
-    flex-direction: column;
-    align-items: center;
-    gap: 70px;
-  }
-  .services .offer p,
-  .whyUs p,
-  .contact p,
-  .about p,
-  footer p,
-  .card .content-card p {
-    width: 100%;
-  }
-  .services .content-section div:nth-child(1) .l-div img,
-  .about .content-section img {
-    width: 100%;
-    height: auto;
-  }
-  .services .offer,
-  .whyUs .team,
-  .contact .contant-intro {
-    padding: 0;
-    justify-content: center;
-  }
-  .services img {
-    height: 20px;
-    height: 20px;
-  }
-  .services .content-section div:nth-child(1) .r-div {
-    align-items: center;
-  }
-  .services .content-section div:nth-child(1) .r-div > div {
-    justify-content: center;
-    gap: 10px;
-  }
-  .services .sub-menu {
-    transform: translateY(24px);
-    font-size: 0.8rem;
-  }
-  .services .content-section div:nth-child(1) .r-div > div::after {
-    top: 60px;
-  }
-  .cards {
-    margin-left: 350px;
-  }
-  form {
-    width: 60%;
-    gap: 20px;
-  }
-  footer p,
-  footer a {
-    font-size: 0.9rem;
-  }
-  footer .title-section .nav-links {
-    margin: 0;
-    justify-content: center;
-  }
-  footer .content-section div:nth-last-child(1) {
-    align-items: center;
-  }
-  .footer-bottom {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-}
-@media (max-width: 768px) {
-  h2 {
-    font-size: 1.5rem;
-    text-align: center;
-    font-weight: bold;
-  }
-  h3 {
-    font-size: 1.2rem;
-  }
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-  .hero p {
-    font-size: 1.1rem;
-  }
-  .nav-links.active {
-    display: flex;
-  }
-  .menu-toggle {
-    display: block;
-    color: var(--font-color);
-    /* font-size: 1.5rem; */
-    z-index: 2;
-  }
-  header .nav-links {
-    position: absolute;
-    right: 35%;
-    top: -100%;
-    width: 19%;
-    background-color: var(--main-color);
-    flex-direction: column;
-    align-items: center;
-    gap: 0;
-    transition: 0.3s ease-in-out;
-    z-index: 1;
-    border: 1px solid #5d59592d;
-  }
-  header .nav-links.active {
-    top: 50px;
-  }
-  header .nav-links li {
-    width: 100%;
-  }
-  header .nav-links a {
-    font-size: 0.6rem !important;
-  }
-  header .sub-menu {
-    position: static;
-    transform: translateX(5px);
-    width: 75%;
-    display: none;
-    border: 1px solid #5d59592d;
-  }
-  header .sub-menu.show {
-    display: block;
-  }
-  header .sub-menu a {
-    font-size: 0.5rem !important;
-  }
-  .services .offer p,
-  .whyUs p,
-  .contact p,
-  .about p,
-  footer p,
-  .card .content-card p {
-    text-align: center;
-  }
-  .slider {
-    max-width: 100%;
-  }
-  .slide {
-    font-size: 2rem !important;
-  }
-  .contant-intro p {
-    padding: 0;
-  }
-  .cards {
-    margin-left: 0;
-  }
-  .card {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
-  .card .content-card {
-    align-items: center;
-  }
-  form label,
-  form input,
-  form textarea {
-    font-size: 1rem;
-  }
-  form {
-    width: 100%;
-    grid-template-columns: 1fr;
-  }
-  form .name,
-  form .message {
-    grid-column: 1 / 2;
-  }
-}
-@media (max-width: 490px) {
-  h2,
-  h3,
-  i {
-    font-size: 1.2rem;
-  }
-  .hero button,
-  .services button,
-  form button {
-    width: 100%;
-  }
 }

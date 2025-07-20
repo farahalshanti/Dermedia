@@ -44,7 +44,6 @@ toggleBtn.onclick = function () {
   navLinks.classList.toggle("active");
   menuIcon.classList.toggle("fa-xmark");
 };
-
 mood.onclick = function () {
   mood.classList.toggle("fa-sun");
   mood.classList.toggle("fa-moon");
@@ -90,8 +89,6 @@ sliders.forEach((slider) => {
   const nextBtn = slider.querySelector(".slider .fa-angle-right");
   const totalSlides = slides.length;
   let currentIndex = 0;
-
-  // دالة لتحريك السلايد
   function goToSlide(index) {
     if (index < 0) {
       currentIndex = totalSlides - 1;
@@ -107,7 +104,6 @@ sliders.forEach((slider) => {
   function captions() {
     const projectName = slider.parentElement.querySelector("h6");
     const projectDesc = slider.parentElement.querySelector("p");
-    // يمكنك استبدال هذه البيانات ببيانات حقيقية من قاعدة البيانات
     const projectsData = [
       { name: "Project 1", desc: "Description for project 1" },
       { name: "Project 2", desc: "Description for project 2" },
@@ -118,68 +114,37 @@ sliders.forEach((slider) => {
       projectDesc.textContent = projectsData[currentIndex].desc;
     }
   }
-  // الأحداث
   prevBtn.onclick = function () {
     goToSlide(currentIndex - 1);
   };
   nextBtn.onclick = function () {
     goToSlide(currentIndex + 1);
   };
-  // التمرير بالسوايب على الهاتف
-  let touchStartX = 0;
-  let touchEndX = 0;
-  slideContainer.addEventListener(
-    "touchstart",
-    (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-    },
-    { passive: true }
-  );
-
-  slideContainer.addEventListener(
-    "touchend",
-    (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    },
-    { passive: true }
-  );
-
-  function handleSwipe() {
-    const diff = touchStartX - touchEndX;
-    if (diff > 50) {
-      goToSlide(currentIndex + 1);
-    } else if (diff < -50) {
-      goToSlide(currentIndex - 1);
-    }
-  }
-  captions();
 });
 
 window.onscroll = function () {
-  if (window.scrollY >= servicesSection.offsetTop) {
+  if (window.scrollY >= servicesSection.offsetTop + 50) {
     pServices.style.transform = "translateX(0)";
-    pServices.style.transition = "3s";
+    pServices.style.transition = "4s";
   } else {
     pServices.style.transform = null;
   }
-  if (window.scrollY >= whyUsSection.offsetTop-500) {
+  if (window.scrollY >= whyUsSection.offsetTop - 500) {
     pwhyUs.style.transform = "translateX(0)";
-    pwhyUs.style.transition = "3s";
+    pwhyUs.style.transition = "4s";
   } else {
     pwhyUs.style.transform = null;
   }
-  if (window.scrollY >= contactSection.offsetTop-500) {
+  if (window.scrollY >= contactSection.offsetTop - 500) {
     pcontact.style.transform = "translateX(0)";
-    pcontact.style.transition = "3s";
+    pcontact.style.transition = "4s";
   } else {
     pcontact.style.transform = null;
   }
-  if (window.scrollY >= aboutSection.offsetTop - 200) {
+  if (window.scrollY >= aboutSection.offsetTop - 300) {
     pabout.style.transform = "translateX(0)";
-    pabout.style.transition = "3s";
+    pabout.style.transition = "2s";
   } else {
     pabout.style.transform = null;
   }
-}
-
+};

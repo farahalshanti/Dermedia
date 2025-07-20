@@ -1,0 +1,217 @@
+@media (max-width: 1066px) {
+  h2 {
+    font-size: 4rem;
+  }
+  .container {
+    width: 80%;
+    padding: 35px 0;
+  }
+  header button {
+    display: none;
+  }
+  .services .content-section > div:nth-child(1),
+  .about .content-section,
+  footer .content-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+  }
+  .services .offer p,
+  .whyUs p,
+  .contact p,
+  .about p,
+  footer p,
+  .card .content-card p {
+    width: 100%;
+  }
+  .services .content-section div:nth-child(1) .l-div img,
+  .about .content-section img {
+    width: 100%;
+    height: auto;
+  }
+  .services .offer,
+  .whyUs .team,
+  .contact .contant-intro {
+    padding: 0;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .services img {
+    height: 20px;
+    height: 20px;
+  }
+  .services .content-section div:nth-child(1) .r-div {
+    align-items: center;
+  }
+  .services .content-section div:nth-child(1) .r-div > div {
+    justify-content: center;
+    gap: 10px;
+  }
+  .services .sub-menu {
+    transform: translateY(24px);
+    font-size: 0.8rem;
+  }
+  .services .content-section div:nth-child(1) .r-div > div::after {
+    top: 60px;
+  }
+  .cards {
+    margin-left: 350px;
+  }
+  form {
+    width: 60%;
+    gap: 20px;
+  }
+  footer p,
+  footer a {
+    font-size: 0.8rem;
+  }
+  footer .title-section .nav-links {
+    margin: 0;
+    justify-content: center;
+  }
+  footer .content-section div:nth-last-child(1) {
+    align-items: center;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+    position: relative;
+    color: var(--font-color);
+    z-index: 2;
+  }
+  header .nav-links {
+    position: absolute;
+    top: -70%;
+    right: 27%;
+    width: 140px;
+    background-color: var(--main-color);
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    transition: 0.3s ease-in-out;
+    z-index: 1;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  header .nav-links.active {
+    top: 60%;
+  }
+  header .nav-links li {
+    width: 100%;
+  }
+  header .nav-links a {
+    font-size: 0.7rem !important;
+    padding: 4px 10px;
+    display: block;
+    width: 100%;
+  }
+  header .sub-menu {
+    position: static;
+    padding-left: 15px;
+    width: 90%;
+    display: none;
+  }
+  header .sub-menu.show {
+    display: block;
+  }
+  header .sub-menu a {
+    font-size: 0.7rem !important;
+    padding: 4px 10px;
+  }
+  header .navbar {
+    position: relative;
+  }
+  .hero {
+    padding-top: 120px;
+  }
+  .services .offer p,
+  .whyUs p,
+  .contact p,
+  .about p,
+  footer p,
+  .card .content-card p {
+    text-align: center;
+  }
+  .slider {
+    max-width: 100%;
+  }
+  .slide {
+    font-size: 2rem;
+  }
+  .contant-intro p {
+    padding: 0;
+  }
+  .cards {
+    margin-left: 0;
+  }
+  .card {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .card .content-card {
+    align-items: center;
+  }
+  .about .content-section p {
+    transform: translateX(-866px);
+  }
+  form label,
+  form input,
+  form textarea {
+    font-size: 1rem;
+  }
+  form {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+  form .name,
+  form .message {
+    grid-column: 1 / 2;
+  }
+}
+@media (max-width: 490px) {
+  header .nav-links.active {
+    top: 68%;
+    right: 15%;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .hero {
+    padding-top: 120px;
+  }
+  .hero button,
+  .services button,
+  form button {
+    width: 100%;
+  }
+  .projects .slide {
+    font-size: 1.5rem;
+  }
+  footer .title-section .nav-links a {
+    font-size: 0.6rem;
+  }
+}
