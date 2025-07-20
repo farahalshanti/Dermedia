@@ -104,7 +104,7 @@
   }
   header .nav-links {
     position: absolute;
-    top: -176%;
+    top: -170%;
     right: 27%;
     width: 140px;
     background-color: var(--main-color);
@@ -152,7 +152,7 @@
   .contact p,
   .about p,
   footer p,
-  .card .contect-card p {
+  .card .content-card p {
     text-align: center;
   }
   .slider {
