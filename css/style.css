@@ -514,3 +514,10 @@ footer .content-section div:nth-last-child(1) {
   color: var(--font-color);
   text-decoration: none;
 }
+
+
+.footer-links a {
+  margin-left: 15px;
+  color: var(--font-color);
+  text-decoration: none;
+}
