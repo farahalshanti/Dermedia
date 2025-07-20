@@ -31,7 +31,7 @@
   }
   .services .offer,
   .whyUs .team,
-  .contact .contant-intro {
+  .contact .contact-intro {
     padding: 0;
     justify-content: center;
     flex-direction: column;
@@ -152,7 +152,7 @@
   .contact p,
   .about p,
   footer p,
-  .card .content-card p {
+  .card .contect-card p {
     text-align: center;
   }
   .slider {
@@ -161,7 +161,7 @@
   .slide {
     font-size: 2rem;
   }
-  .contant-intro p {
+  .contact-intro p {
     padding: 0;
   }
   .cards {
