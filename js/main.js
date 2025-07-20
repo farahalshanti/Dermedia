@@ -5,28 +5,21 @@ let colorPicker = document.querySelector(".color-picker");
 let colorOptions = document.querySelectorAll(".color-option");
 let toggleBtn = document.querySelector("header .menu-toggle");
 let navLinks = document.querySelector("header .nav-links");
+let mainLinks = document.querySelectorAll(".nav-links > li > a");
 let menuIcon = document.querySelector("header .menu-toggle i");
-let Links = document.querySelectorAll(".nav-links a");
 let arrows = document.querySelectorAll(".arrow i");
 let menus = document.querySelectorAll(".menu");
 let subMenus = document.querySelectorAll(".sub-menu");
+let subMenuLinks = document.querySelectorAll(".sub-menu a");
 let h1 = document.querySelector(".hero h1");
 let servicesSection = document.querySelector(".services");
 let pServices = document.querySelector(".services .offer p");
 let whyUsSection = document.querySelector(".whyUs");
-let pwhyUs = document.querySelector(".whyUs .team p");
+let pWhyUs = document.querySelector(".whyUs .team p");
 let contactSection = document.querySelector(".contact");
-let pcontact = document.querySelector(".contact .contant-intro p");
+let pContact = document.querySelector(".contact .contact-intro p");
 let aboutSection = document.querySelector(".about");
-let pabout = document.querySelector(".about .content-section p");
-Links.forEach((link) => {
-  link.onclick = function () {
-    Links.forEach((l) => {
-      l.classList.remove("active");
-    });
-    link.classList.add("active");
-  };
-});
+let pAbout = document.querySelector(".about .content-section p");
 
 menus.forEach((menu, index) => {
   menu.onclick = function () {
@@ -40,10 +33,56 @@ menus.forEach((menu, index) => {
   };
 });
 
-toggleBtn.onclick = function () {
-  navLinks.classList.toggle("active");
-  menuIcon.classList.toggle("fa-xmark");
-};
+    if (toggleBtn) {
+    toggleBtn.onclick = function () {
+      navLinks.classList.toggle("active");
+      menuIcon.classList.toggle("fa-xmark");
+      menuIcon.classList.toggle("fa-bars");
+    };
+  }
+
+  mainLinks.forEach((link) => {
+    link.onclick = function (e) {
+      if (!link.parentElement.classList.contains("menu")) {
+        if (link.hash) {
+          e.preventDefault();
+          const target = document.querySelector(link.hash);
+          if (target) target.scrollIntoView({ behavior: "smooth" });
+        }
+        closeMenu();
+      }
+    };
+  });
+
+  subMenuLinks.forEach((link) => {
+    link.onclick = function (e) {
+      if (link.hash) {
+        e.preventDefault();
+        const target = document.querySelector(link.hash);
+        if (target) target.scrollIntoView({ behavior: "smooth" });
+      }
+      closeMenu();
+    };
+  });
+
+  document.onclick = function (e) {
+    if (
+      navLinks.classList.contains("active") &&
+      !e.target.closest(".nav-links") &&
+      !e.target.closest(".menu-toggle")
+    ) {
+      closeMenu();
+    }
+  };
+
+  function closeMenu() {
+    navLinks.classList.remove("active");
+    if (menuIcon) {
+      menuIcon.classList.remove("fa-xmark");
+      menuIcon.classList.add("fa-bars");
+    }
+  }
+
 mood.onclick = function () {
   mood.classList.toggle("fa-sun");
   mood.classList.toggle("fa-moon");
@@ -130,21 +169,22 @@ window.onscroll = function () {
     pServices.style.transform = null;
   }
   if (window.scrollY >= whyUsSection.offsetTop - 500) {
-    pwhyUs.style.transform = "translateX(0)";
-    pwhyUs.style.transition = "4s";
+    pWhyUs.style.transform = "translateX(0)";
+    pWhyUs.style.transition = "4s";
   } else {
-    pwhyUs.style.transform = null;
+    pWhyUs.style.transform = null;
   }
   if (window.scrollY >= contactSection.offsetTop - 500) {
-    pcontact.style.transform = "translateX(0)";
-    pcontact.style.transition = "4s";
+    pContact.style.transform = "translateX(0)";
+    pContact.style.transition = "4s";
   } else {
-    pcontact.style.transform = null;
+    pContact.style.transform = null;
   }
   if (window.scrollY >= aboutSection.offsetTop - 300) {
-    pabout.style.transform = "translateX(0)";
-    pabout.style.transition = "2s";
+    pAbout.style.transform = "translateX(0)";
+    pAbout.style.transition = "2s";
   } else {
-    pabout.style.transform = null;
+    pAbout.style.transform = null;
   }
 };
+
