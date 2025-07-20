@@ -117,7 +117,7 @@ footer {
 }
 .services .offer,
 .whyUs .team,
-.contact .contant-intro {
+.contact .contact-intro {
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -135,7 +135,7 @@ footer p {
 }
 .services .offer p,
 .whyUs .team p,
-.contact .contant-intro p {
+.contact .contact-intro p {
   transform: translateX(455px);
 }
 header .nav-links,
@@ -404,7 +404,7 @@ header .color-picker-wrapper:hover {
   width: 60%;
 }
 /* Contact Section*/
-.contant-intro p {
+.contact-intro p {
   padding-right: 150px;
   padding-top: 105px;
 }
